@@ -1,5 +1,4 @@
 \usepackage{blindtext}
-\usepackage{titling}
 \usepackage{titlesec}
 \usepackage{amsmath}
 \usepackage[hidelinks]{hyperref}
@@ -7,8 +6,6 @@
 \usepackage{graphicx}
 \usepackage{longtable}
 \usepackage[shortlabels]{enumitem}
-
-\setlength{\droptitle}{-3cm}
 
 \titleformat{\section}
     {\normalfont\Large\bfseries}{}{0pt}{}
@@ -21,3 +18,15 @@
 \renewcommand{\subsection}{
   \renewcommand{\theequation}{\thesubsection.\arabic{equation}}
   \oldsubsection}
+
+\makeatletter
+\renewcommand{\maketitle}{
+    \bgroup
+    \centering
+    \par\LARGE\@title  \\[20pt]
+    \par\large\@author \\[10pt]
+    \par\large\@date
+    \par
+    \egroup
+}
+\makeatother
