@@ -18,20 +18,15 @@
 \usepackage{dirtytalk}
 \usepackage{tcolorbox}
 \usepackage{diagbox}
+\usepackage{chngcntr}
 
 \captionsetup[table]{position=bottom}
+\counterwithin{figure}{section}
+\counterwithin{table}{section}
+\counterwithin{equation}{section}
 
 \titleformat{\section}
     {\normalfont\Large\bfseries}{}{0pt}{}
-
-\let\oldsection\section
-\renewcommand{\section}{
-  \renewcommand{\theequation}{\thesection.\arabic{equation}}
-  \oldsection}
-\let\oldsubsection\subsection
-\renewcommand{\subsection}{
-  \renewcommand{\theequation}{\thesubsection.\arabic{equation}}
-  \oldsubsection}
 
 \makeatletter
 \renewcommand{\maketitle}{
